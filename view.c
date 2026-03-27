@@ -428,7 +428,7 @@ void titleScreenDisplay() {
     waddstr(wHighscore, "         TOP 10         ");
     waddstr(wHighscore, "                        ");
     for (i = 0; i < MAX_HIGHSCORE_ENTRIES; i++) {
-      snprintf(highscoreBuffer, sizeof(highscoreBuffer), "%s.........%2.7d",
+      snprintf(highscoreBuffer, sizeof(highscoreBuffer), "%-8s.....%7d\n",
                highscore.normal[i].name, highscore.normal[i].score);
       waddstr(wHighscore, highscoreBuffer);
     }
@@ -541,8 +541,11 @@ void battleFieldClear() {
  * refresh screen so that modified graphic buffers get visible
  */
 void refreshScreen() {
-  redrawwin(wBattleField); // needed to display graphics properly at startup on
-                           // some terminals
+  static int firstRefresh = 1;
+  if (firstRefresh == 1) {
+    redrawwin(wBattleField); // needed to display graphics properly at startup on some terminals
+    firstRefresh = 0;
+  }
   wrefresh(wBattleField);
 }
 
