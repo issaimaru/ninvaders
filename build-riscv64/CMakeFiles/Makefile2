@@ -67,7 +67,7 @@ all: CMakeFiles/ninvaders.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: CMakeFiles/ninvaders.dir/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -81,12 +81,12 @@ clean: CMakeFiles/ninvaders.dir/clean
 CMakeFiles/ninvaders.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninvaders.dir/build.make CMakeFiles/ninvaders.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninvaders.dir/build.make CMakeFiles/ninvaders.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/takeu/github/ninvaders/build-riscv64/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target ninvaders"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/takeu/github/ninvaders/build-riscv64/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target ninvaders"
 .PHONY : CMakeFiles/ninvaders.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ninvaders.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/takeu/github/ninvaders/build-riscv64/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/takeu/github/ninvaders/build-riscv64/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ninvaders.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/takeu/github/ninvaders/build-riscv64/CMakeFiles 0
 .PHONY : CMakeFiles/ninvaders.dir/rule
@@ -94,11 +94,6 @@ CMakeFiles/ninvaders.dir/rule: cmake_check_build_system
 # Convenience name for target.
 ninvaders: CMakeFiles/ninvaders.dir/rule
 .PHONY : ninvaders
-
-# Pre-install relink rule for target.
-CMakeFiles/ninvaders.dir/preinstall:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninvaders.dir/build.make CMakeFiles/ninvaders.dir/preinstall
-.PHONY : CMakeFiles/ninvaders.dir/preinstall
 
 # clean rule for target.
 CMakeFiles/ninvaders.dir/clean:

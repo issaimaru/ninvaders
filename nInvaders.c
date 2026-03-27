@@ -36,6 +36,8 @@ int lives;
 long score;
 int status; // status handled in timer
 
+int screen_dirty; // flag to indicate that screen needs to be redrawn
+
 // todo: let's try to not having to declare these "public"
 int weite;
 int level;
@@ -138,6 +140,7 @@ void readInput() {
 
     if (ch == 'p') {
       status = GAME_LOOP;
+      screen_dirty = 1;
     }
     break;
 
@@ -149,8 +152,10 @@ void readInput() {
       score = 0; // reset score
       lives = 3; // restore lives
       status = GAME_NEXTLEVEL;
+      screen_dirty = 1;
     } else if (ch == 'q') { // quit game
       status = GAME_EXIT;
+      screen_dirty = 1;
     } else if (ch == 'a') { // DEBUG: add highscore entry
       addEntry("CHEATER!", 6666, 1);
     }
@@ -169,6 +174,7 @@ void readInput() {
       }
       playerMoveRight(); // move player
       lastmove = 'l';    // remember last move for turbo mode
+      screen_dirty = 1;
     } else if (ch == 'h' || ch == KEY_LEFT) { // move player left
       if (lastmove == 'h') {
         playerTurboOn(); // enable Turbo
@@ -177,18 +183,24 @@ void readInput() {
       }
       playerMoveLeft();                  // move player
       lastmove = 'h';                    // remember last move for turbo mode
+      screen_dirty = 1;
     } else if (ch == 'k' || ch == ' ') { // shoot missile
       playerLaunchMissile();
+      screen_dirty = 1;
     } else if (ch == 'p') { // pause game until 'p' pressed again
       // set status to game paused
       status = GAME_PAUSED;
+      screen_dirty = 1;
     } else if (ch == 'W') { // cheat: goto next level
       status = GAME_NEXTLEVEL;
+      screen_dirty = 1;
     } else if (ch == 'L') { // cheat: one more live
       lives++;
       drawscore();
+      screen_dirty = 1;
     } else if (ch == 'q') { // quit game
       status = GAME_EXIT;
+      screen_dirty = 1;
     } else { // disable turbo mode if key is not kept pressed
       lastmove = ' ';
     }
@@ -227,38 +239,53 @@ void handleTimer() {
       weite = 0;
     }
 
+    screen_dirty = 1;
+
     // change status and start game!
     status = GAME_LOOP;
 
   case GAME_LOOP: // do game handling
 
     // move aliens
-    if (aliens_move_counter == 0 && aliensMove() == 1) {
-      // aliens reached player
-      lives = 0;
-      status = GAME_OVER;
+    if (aliens_move_counter == 0) {
+      screen_dirty = 1;
+      if (aliensMove() == 1) {
+        // aliens reached player
+        lives = 0;
+        status = GAME_OVER;
+      }
     }
 
     // move player missile
-    if (player_shot_counter == 0 && playerMoveMissile() == 1) {
-      // no aliens left
-      status = GAME_NEXTLEVEL;
+    if(player_shot_counter == 0) {
+      screen_dirty = 1;
+      if (playerMoveMissile() == 1) {
+        // no aliens left
+        status = GAME_NEXTLEVEL;
+        screen_dirty = 1;
+      }
     }
 
     // move aliens' missiles
-    if (aliens_shot_counter == 0 && aliensMissileMove() == 1) {
-      // player was hit
-      lives--;              // player looses one life
-      drawscore();          // draw score
-      playerExplode();      // display some explosion graphics
-      if (lives == 0) {     // if no lives left ...
-        status = GAME_OVER; // ... exit game
+    if (aliens_shot_counter == 0) {
+      screen_dirty = 1;
+      if (aliensMissileMove() == 1) {
+        // player was hit
+        lives--;              // player looses one life
+        drawscore();          // draw score
+        playerExplode();      // display some explosion graphics
+        if (lives == 0) {     // if no lives left ...
+          status = GAME_OVER; // ... exit game
+        }
       }
     }
 
     // move ufo
-    if (ufo_move_counter == 0 && ufoShowUfo() == 1) {
-      ufoMoveLeft(); // move it one position to the left
+    if (ufo_move_counter == 0) {
+      screen_dirty = 1;
+      if (ufoShowUfo() == 1) {
+        ufoMoveLeft(); // move it one position to the left
+      }
     }
 
     if (aliens_shot_counter++ >= 5) {
@@ -274,7 +301,10 @@ void handleTimer() {
       ufo_move_counter = 0;
     } // speed of ufo
 
-    refreshScreen();
+    if(screen_dirty == 1) {
+      refreshScreen();
+      screen_dirty = 0;
+    }
     break;
 
   case GAME_PAUSED: // game is paused

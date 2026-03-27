@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "/usr/bin/riscv64-linux-gnu-gcc")
+set(CMAKE_C_COMPILER "/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-gcc")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "13.3.0")
@@ -18,14 +18,15 @@ set(CMAKE_C_SIMULATE_ID "")
 set(CMAKE_C_COMPILER_FRONTEND_VARIANT "GNU")
 set(CMAKE_C_SIMULATE_VERSION "")
 
+set(CMAKE_C_COMPILER_SYSROOT "/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr")
+set(CMAKE_COMPILER_SYSROOT "/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr")
 
 
-
-set(CMAKE_AR "/usr/bin/ar")
-set(CMAKE_C_COMPILER_AR "/usr/bin/riscv64-linux-gnu-gcc-ar-13")
-set(CMAKE_RANLIB "/usr/bin/ranlib")
-set(CMAKE_C_COMPILER_RANLIB "/usr/bin/riscv64-linux-gnu-gcc-ranlib-13")
-set(CMAKE_LINKER "/usr/bin/ld")
+set(CMAKE_AR "/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-ar")
+set(CMAKE_C_COMPILER_AR "/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-gcc-ar")
+set(CMAKE_RANLIB "/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-ranlib")
+set(CMAKE_C_COMPILER_RANLIB "/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-gcc-ranlib")
+set(CMAKE_LINKER "/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-ld")
 set(CMAKE_MT "")
 set(CMAKE_TAPI "CMAKE_TAPI-NOTFOUND")
 set(CMAKE_COMPILER_IS_GNUCC 1)
@@ -45,7 +46,7 @@ set(CMAKE_C_LINKER_DEPFILE_SUPPORTED TRUE)
 set(CMAKE_C_SIZEOF_DATA_PTR "8")
 set(CMAKE_C_COMPILER_ABI "ELF")
 set(CMAKE_C_BYTE_ORDER "LITTLE_ENDIAN")
-set(CMAKE_C_LIBRARY_ARCHITECTURE "riscv64-linux-gnu")
+set(CMAKE_C_LIBRARY_ARCHITECTURE "")
 
 if(CMAKE_C_SIZEOF_DATA_PTR)
   set(CMAKE_SIZEOF_VOID_P "${CMAKE_C_SIZEOF_DATA_PTR}")
@@ -56,7 +57,7 @@ if(CMAKE_C_COMPILER_ABI)
 endif()
 
 if(CMAKE_C_LIBRARY_ARCHITECTURE)
-  set(CMAKE_LIBRARY_ARCHITECTURE "riscv64-linux-gnu")
+  set(CMAKE_LIBRARY_ARCHITECTURE "")
 endif()
 
 set(CMAKE_C_CL_SHOWINCLUDES_PREFIX "")
@@ -68,7 +69,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/usr/lib/gcc-cross/riscv64-linux-gnu/13/include;/usr/riscv64-linux-gnu/include;/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/takeu/riscv-sdk/host/lib/gcc/riscv64-buildroot-linux-gnu/13.3.0/include;/home/takeu/riscv-sdk/host/lib/gcc/riscv64-buildroot-linux-gnu/13.3.0/include-fixed;/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/include;/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc-cross/riscv64-linux-gnu/13;/usr/riscv64-linux-gnu/lib;/lib/riscv64-linux-gnu;/usr/lib/riscv64-linux-gnu")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/home/takeu/riscv-sdk/host/lib/gcc/riscv64-buildroot-linux-gnu/13.3.0;/home/takeu/riscv-sdk/host/lib/gcc;/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/lib;/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/lib;/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

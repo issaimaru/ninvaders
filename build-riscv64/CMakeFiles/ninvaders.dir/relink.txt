@@ -1,1 +1,0 @@
-/usr/bin/riscv64-linux-gnu-gcc CMakeFiles/ninvaders.dir/aliens.c.o CMakeFiles/ninvaders.dir/globals.c.o CMakeFiles/ninvaders.dir/highscore.c.o CMakeFiles/ninvaders.dir/nInvaders.c.o CMakeFiles/ninvaders.dir/player.c.o CMakeFiles/ninvaders.dir/ufo.c.o CMakeFiles/ninvaders.dir/view.c.o -o CMakeFiles/CMakeRelink.dir/ninvaders  -lncurses /usr/lib/riscv64-linux-gnu/libform.so 

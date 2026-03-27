@@ -15,10 +15,10 @@
 ########################
 
 //Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
+CMAKE_ADDR2LINE:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-addr2line
 
 //Path to a program.
-CMAKE_AR:FILEPATH=/usr/bin/ar
+CMAKE_AR:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
@@ -27,34 +27,34 @@ CMAKE_BUILD_TYPE:STRING=
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
+CMAKE_CXX_FLAGS:STRING=-march=rv64imac -mabi=lp64
+
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_AR:FILEPATH=/usr/bin/riscv64-linux-gnu-gcc-ar-13
+CMAKE_C_COMPILER_AR:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-gcc-ar
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/bin/riscv64-linux-gnu-gcc-ranlib-13
+CMAKE_C_COMPILER_RANLIB:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-gcc-ranlib
 
-//Flags used by the C compiler during all build types.
-CMAKE_C_FLAGS:STRING=
+CMAKE_C_FLAGS:STRING=-march=rv64imac -mabi=lp64
 
 //Flags used by the C compiler during DEBUG builds.
-CMAKE_C_FLAGS_DEBUG:STRING=
+CMAKE_C_FLAGS_DEBUG:STRING=-g
 
 //Flags used by the C compiler during MINSIZEREL builds.
-CMAKE_C_FLAGS_MINSIZEREL:STRING=
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
 //Flags used by the C compiler during RELEASE builds.
-CMAKE_C_FLAGS_RELEASE:STRING=
+CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the C compiler during RELWITHDEBINFO builds.
-CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
 
-//Flags used by the linker during all build types.
-CMAKE_EXE_LINKER_FLAGS:STRING=
+CMAKE_EXE_LINKER_FLAGS:STRING=-march=rv64imac -mabi=lp64
 
 //Flags used by the linker during DEBUG builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
@@ -126,7 +126,7 @@ CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
 CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=/usr/bin/ld
+CMAKE_LINKER:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-ld
 
 //Path to a program.
 CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/gmake
@@ -152,13 +152,13 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_NM:FILEPATH=/usr/bin/nm
+CMAKE_NM:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-nm
 
 //Path to a program.
-CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
+CMAKE_OBJCOPY:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-objcopy
 
 //Path to a program.
-CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
+CMAKE_OBJDUMP:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-objdump
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -170,10 +170,10 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=ninvaders
 
 //Path to a program.
-CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
+CMAKE_RANLIB:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-ranlib
 
 //Path to a program.
-CMAKE_READELF:FILEPATH=/usr/bin/readelf
+CMAKE_READELF:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-readelf
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -223,13 +223,13 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_STRIP:FILEPATH=/usr/bin/strip
+CMAKE_STRIP:FILEPATH=/home/takeu/riscv-sdk/host/bin/riscv64-buildroot-linux-gnu-strip
 
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=../riscv64-toolchain.cmake
+//The CMake toolchain file
+CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/takeu/github/ninvaders/riscv64-toolchain.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -238,16 +238,16 @@ CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=../riscv64-toolchain.cmake
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a library.
-CURSES_CURSES_LIBRARY:FILEPATH=/usr/lib/riscv64-linux-gnu/libcurses.so
+CURSES_CURSES_LIBRARY:FILEPATH=/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib/libcurses.so
 
 //Path to a library.
-CURSES_FORM_LIBRARY:FILEPATH=/usr/lib/riscv64-linux-gnu/libform.so
+CURSES_FORM_LIBRARY:FILEPATH=/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib/libform.so
 
 //Path to a file.
-CURSES_INCLUDE_PATH:PATH=/usr/include
+CURSES_INCLUDE_PATH:PATH=/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/include
 
 //Path to a library.
-CURSES_NCURSES_LIBRARY:FILEPATH=/usr/lib/riscv64-linux-gnu/libncurses.so
+CURSES_NCURSES_LIBRARY:FILEPATH=/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib/libncurses.so
 
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
@@ -265,10 +265,10 @@ ninvaders_IS_TOP_LEVEL:STATIC=ON
 ninvaders_SOURCE_DIR:STATIC=/home/takeu/github/ninvaders
 
 //Path to a library.
-pkgcfg_lib_NCURSES_ncurses:FILEPATH=/usr/lib/riscv64-linux-gnu/libncurses.so
+pkgcfg_lib_NCURSES_ncurses:FILEPATH=/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib/libncurses.so
 
 //Path to a library.
-pkgcfg_lib_NCURSES_tinfo:FILEPATH=/usr/lib/riscv64-linux-gnu/libtinfo.so
+pkgcfg_lib_NCURSES_tinfo:FILEPATH=pkgcfg_lib_NCURSES_tinfo-NOTFOUND
 
 
 ########################
@@ -312,7 +312,7 @@ CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_DLLTOOL
 CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //Executable file format
-CMAKE_EXECUTABLE_FORMAT:INTERNAL=Unknown
+CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
@@ -434,7 +434,7 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Have library /usr/lib/riscv64-linux-gnu/libcurses.so
+//Have library /home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib/libcurses.so
 CURSES_CURSES_HAS_WSYNCUP:INTERNAL=1
 //ADVANCED property for variable: CURSES_CURSES_LIBRARY
 CURSES_CURSES_LIBRARY-ADVANCED:INTERNAL=1
@@ -442,14 +442,14 @@ CURSES_CURSES_LIBRARY-ADVANCED:INTERNAL=1
 CURSES_FORM_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CURSES_INCLUDE_PATH
 CURSES_INCLUDE_PATH-ADVANCED:INTERNAL=1
-//Have library /usr/lib/riscv64-linux-gnu/libncurses.so
+//Have library /home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib/libncurses.so
 CURSES_NCURSES_HAS_CBREAK:INTERNAL=1
-//Have library /usr/lib/riscv64-linux-gnu/libncurses.so
+//Have library /home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib/libncurses.so
 CURSES_NCURSES_HAS_NODELAY:INTERNAL=1
 //ADVANCED property for variable: CURSES_NCURSES_LIBRARY
 CURSES_NCURSES_LIBRARY-ADVANCED:INTERNAL=1
 //Details about finding Curses
-FIND_PACKAGE_MESSAGE_DETAILS_Curses:INTERNAL=[/usr/lib/riscv64-linux-gnu/libncurses.so][/usr/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_Curses:INTERNAL=[/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/lib/libncurses.so][/home/takeu/riscv-sdk/host/riscv64-buildroot-linux-gnu/sysroot/usr/include][v()]
 NCURSES_CFLAGS:INTERNAL=-D_DEFAULT_SOURCE;-D_XOPEN_SOURCE=600
 NCURSES_CFLAGS_I:INTERNAL=
 NCURSES_CFLAGS_OTHER:INTERNAL=-D_DEFAULT_SOURCE;-D_XOPEN_SOURCE=600

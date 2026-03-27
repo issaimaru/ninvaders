@@ -174,11 +174,6 @@ ninvaders/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninvaders.dir/build.make CMakeFiles/ninvaders.dir/build
 .PHONY : ninvaders/fast
 
-# Manual pre-install relink rule for target.
-ninvaders/preinstall:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ninvaders.dir/build.make CMakeFiles/ninvaders.dir/preinstall
-.PHONY : ninvaders/preinstall
-
 aliens.o: aliens.c.o
 .PHONY : aliens.o
 

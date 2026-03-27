@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CMakeRelink.dir/ninvaders"
   "CMakeFiles/ninvaders.dir/aliens.c.o"
   "CMakeFiles/ninvaders.dir/aliens.c.o.d"
   "CMakeFiles/ninvaders.dir/globals.c.o"
