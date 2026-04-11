@@ -1,0 +1,11 @@
+prefix=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host
+exec_prefix=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host
+libdir=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host/lib
+includedir=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host/include
+
+Name: fdisk
+Description: fdisk library
+Version: 2.40.2
+Requires.private: uuid blkid
+Cflags: -I${includedir}/libfdisk
+Libs: -L${libdir} -lfdisk

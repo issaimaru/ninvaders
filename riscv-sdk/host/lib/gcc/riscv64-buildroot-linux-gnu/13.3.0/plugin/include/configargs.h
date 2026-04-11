@@ -1,0 +1,7 @@
+/* Generated automatically. */
+static const char configuration_arguments[] = "./configure --prefix=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host --sysconfdir=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host/etc --enable-static --target=riscv64-buildroot-linux-gnu --with-sysroot=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host/riscv64-buildroot-linux-gnu/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host --with-mpc=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host --with-mpfr=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host --with-pkgversion='Buildroot -g2cbb2f38d' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-arch=rv64imac_zicsr_zifencei --with-abi=lp64 --enable-languages=c,c++ --with-build-time-tools=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host/riscv64-buildroot-linux-gnu/bin --enable-shared --disable-libgomp";
+static const char thread_model[] = "posix";
+
+static const struct {
+  const char *name, *value;
+} configure_default_options[] = { { "abi", "lp64" }, { "arch", "rv64imac_zicsr_zifencei" }, { "isa_spec", "20191213" } };

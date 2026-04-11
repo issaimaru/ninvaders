@@ -1,7 +1,0 @@
-/home/takeu/github/ninvaders/build-riscv64/CMakeFiles/ninvaders.dir
-/home/takeu/github/ninvaders/build-riscv64/CMakeFiles/edit_cache.dir
-/home/takeu/github/ninvaders/build-riscv64/CMakeFiles/rebuild_cache.dir
-/home/takeu/github/ninvaders/build-riscv64/CMakeFiles/list_install_components.dir
-/home/takeu/github/ninvaders/build-riscv64/CMakeFiles/install.dir
-/home/takeu/github/ninvaders/build-riscv64/CMakeFiles/install/local.dir
-/home/takeu/github/ninvaders/build-riscv64/CMakeFiles/install/strip.dir

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+toolchain_file_name=riscv64-toolchain.cmake
+
+build_dir_name=build-riscv64
+
+app_name=ninvaders
+
+rootfs_file_name=rootfs
+
+
+cmake -S . -B ${build_dir_name} -DCMAKE_TOOLCHAIN_FILE=${toolchain_file_name}
+
+cmake --build ${build_dir_name}
+
+cp ${build_dir_name}/${app_name} cpio/ninvaders/usr/bin/${app_name}
+
+cd cpio/ninvaders
+find . | cpio -o -H newc > ../${app_name}.cpio
+cd ../..
+
+#cpio以下にrootfs.cpioがある場合，ninvaders.cpioをインストールする
+if [ -f cpio/${rootfs_file_name}.cpio ]
+then
+  cat cpio/${app_name}.cpio cpio/${rootfs_file_name}.cpio > cpio/${rootfs_file_name}_with_${app_name}.cpio
+else
+  echo "cpio/${rootfs_file_name}.cpio is not found."
+fi

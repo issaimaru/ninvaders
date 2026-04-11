@@ -2,7 +2,7 @@
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR riscv64)
 
-set(SDK_PATH "$ENV{HOME}/riscv-sdk/host")
+set(SDK_PATH "${CMAKE_CURRENT_LIST_DIR}/riscv-sdk/host")
 
 # Compilers
 set(CMAKE_C_COMPILER "${SDK_PATH}/bin/riscv64-buildroot-linux-gnu-gcc")

@@ -1,0 +1,10 @@
+prefix=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host
+sysconfdir=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host/etc
+distconfdir=${prefix}/lib
+module_directory=/lib/modules
+module_compressions=
+module_signatures=legacy
+
+Name: kmod
+Description: Tools to deal with kernel modules
+Version: 33

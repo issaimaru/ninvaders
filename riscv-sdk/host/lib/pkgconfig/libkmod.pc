@@ -1,0 +1,11 @@
+prefix=/home/vlsilab/issaimaru/github/llm_demo/buildroot/buildroot-2025.02.4/output/host
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libkmod
+Description: Library to deal with kernel modules
+Version: 33
+Libs: -L${libdir} -lkmod
+Libs.private:   
+Cflags: -I${includedir}
