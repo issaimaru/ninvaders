@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 toolchain_file_name=riscv64-toolchain.cmake
 
@@ -7,6 +8,15 @@ build_dir_name=build-riscv64
 app_name=ninvaders
 
 rootfs_file_name=rootfs
+
+required_commands=(cmake cpio)
+for cmd in "${required_commands[@]}"; do
+  if ! command -v "${cmd}" >/dev/null 2>&1; then
+    echo "Error: '${cmd}' is not installed."
+    echo "Please install it and run this script again."
+    exit 1
+  fi
+done
 
 
 cmake -S . -B ${build_dir_name} -DCMAKE_TOOLCHAIN_FILE=${toolchain_file_name}
