@@ -13,6 +13,7 @@ cmake -S . -B ${build_dir_name} -DCMAKE_TOOLCHAIN_FILE=${toolchain_file_name}
 
 cmake --build ${build_dir_name}
 
+mkdir -p cpio/ninvaders/usr/bin
 cp ${build_dir_name}/${app_name} cpio/ninvaders/usr/bin/${app_name}
 
 cd cpio/ninvaders
