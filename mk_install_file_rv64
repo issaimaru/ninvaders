@@ -1,5 +1,4 @@
 #!/bin/bash
-set -euo pipefail
 
 toolchain_file_name=riscv64-toolchain.cmake
 
@@ -9,15 +8,16 @@ app_name=ninvaders
 
 rootfs_file_name=rootfs
 
-required_commands=(cmake cpio)
-for cmd in "${required_commands[@]}"; do
-  if ! command -v "${cmd}" >/dev/null 2>&1; then
-    echo "Error: '${cmd}' is not installed."
-    echo "Please install it and run this script again."
-    exit 1
-  fi
-done
+if [ -d riscv-sdk/host ]; then
+  echo "riscv-sdk is already built."
+else
+  echo "Building riscv-sdk..."
+  cd submodule/buildroot
+  make defconfig O=../../riscv-sdk BR2_DEFCONFIG=../../config/.riscv_imac_config
 
+  make O=../../riscv-sdk -j$(nproc)
+  cd ../..
+fi
 
 cmake -S . -B ${build_dir_name} -DCMAKE_TOOLCHAIN_FILE=${toolchain_file_name}
 
