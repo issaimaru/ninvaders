@@ -1,6 +1,5 @@
 ## nInvaders
 このリポジトリは，64bit RISC-V CPUからUART経由でnInvadersを快適に実行するために，改良を施したものです．<br>
-x86/x64でクロスコンパイルすることを想定しており，ARMでクロスコンパイルする場合はriscv-sdk/hostを変更する必要があります．<br>
 nInvaders自体の詳しい説明は，[fork元リポジトリ](https://github.com/doctorfree/ninvaders)を参照してください．
 ## Table of Contents
 1. [What has changed?](#what-has-changed)
@@ -21,20 +20,12 @@ https://github.com/user-attachments/assets/d726b86e-03cd-4b86-be18-5366ff38b42b
 
 ## Installation
 
+1. `git clone --recursive https://github.com/issaimaru/ninvaders.git`
 1. （オプション）rootfs.cpioをcpio/以下に配置
 1. `./mk_install_file_rv64`を実行する
 1. cpio/以下にrootfs_with_ninvaders.cpioが生成されるので，これをLinuxのルートファイルシステムとする
 1. (オプション) 色を付ける場合はRISC-Vマシン上のLinuxで`TERM=xterm-color`と打つ
 1. RISC-Vマシン上のLinuxで`ninvaders`と打つ
-
-## How to Cross-Compile on an ARM Machine
-1. Buildrootをクローンする
-1. ARMマシン上で，下記の設定でBuildrootをビルドする
-1. riscv-sdk/hostを削除し，Buildrootの生成物(output/host)で上書きする
-
-<img width="1649" height="857" alt="image" src="https://github.com/user-attachments/assets/22269ab3-6da7-46f4-b17a-7c444f524d9d" />
-<img width="1647" height="855" alt="image" src="https://github.com/user-attachments/assets/2c6f1d98-1ee4-4b30-9fc1-6c0fb257d6fb" />
-（明記されていない設定はデフォルト）
 
 ## Caution
 UART経由で実行する場合，ボーレートは1,000,000bps以上を推奨します<br>
