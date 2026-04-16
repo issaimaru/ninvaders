@@ -4,7 +4,6 @@ nInvaders自体の詳しい説明は，[fork元リポジトリ](https://github.c
 ## Table of Contents
 1. [What has changed?](#what-has-changed)
 1. [Installation](#installation)
-1. [How to Cross-Compile on an ARM Machine](#how-to-cross-compile-on-an-arm-machine)
 1. [Caution](#caution)
 
 ## What has changed?
